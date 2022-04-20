@@ -14,6 +14,10 @@ bookCollapseSection: true
 Upstream is a command-line utility to explore files via a web browser.  
 It should be very simple to use.
 
+## Disclaimer
+
+This is still work-in-progress. If you experiance a bug or have a feature-request, open an issue.
+
 ## Installation
 
 ```shell
