@@ -20,6 +20,8 @@ This is still work-in-progress. If you experiance a bug or have a feature-reques
 
 ## Installation
 
+{{< tabs "uniqueid" >}}
+{{< tab "Linux/MacOS" >}}
 ```shell
 # Latest release
 python3 -m pip install https://api.github.com/repos/PaddeCraft/UpStream/zipball
@@ -27,6 +29,18 @@ python3 -m pip install https://api.github.com/repos/PaddeCraft/UpStream/zipball
 # Developement version
 python3 -m pip install git+https://github.com/PaddeCraft/UpStream.git
 ```
+{{< /tab >}}
+
+{{< tab "Windows" >}}
+```shell
+# Latest release
+python -m pip install https://api.github.com/repos/PaddeCraft/UpStream/zipball
+
+# Developement version
+python -m pip install git+https://github.com/PaddeCraft/UpStream.git
+```
+{{< /tab >}}
+{{< /tabs >}}
 
 ## Usage
 
@@ -38,3 +52,6 @@ python3 -m upstream --port INT          = 55555
                                                     # because it needs to read the size
                                                     # of every single file.
 ```
+
+## Development
+{{< button relref="/development" >}}Development Docs{{< /button >}}
