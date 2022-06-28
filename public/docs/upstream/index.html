@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Overview # Upstream is a command-line utility to explore files via a web browser.
+It should be very simple to use.
+Disclaimer # This is still work-in-progress. If you experiance a bug or have a feature-request, open an issue.
+Installation # Linux/MacOS # Latest release python3 -m pip install https://api.github.com/repos/PaddeCraft/UpStream/zipball # Developement version python3 -m pip install git&#43;https://github.com/PaddeCraft/UpStream.git Windows # Latest release python -m pip install https://api.github.com/repos/PaddeCraft/UpStream/zipball # Developement version python -m pip install git&#43;https://github.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="UpStream" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://paddecraft.github.com/docs/upstream/" />
+
+<title>UpStream | PaddeCraft</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.58efe11c45890e8030b4ce1376ec6c3aa931c65da5e1d7c714ad4ab5d524fa9a.css" integrity="sha256-WO/hHEWJDoAwtM4TduxsOqkxxl2l4dfHFK1KtdUk&#43;po=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.9c799aee28cc5c7d42640ff3b3533a99fd12c5b9322a597fb937180a5074f32d.js" integrity="sha256-nHma7ijMXH1CZA/zs1M6mf0SxbkyKll/uTcYClB08y0=" crossorigin="anonymous"></script>
+
+  <script defer src="/sw.min.6f6f90fcb8eb1c49ec389838e6b801d0de19430b8e516902f8d75c3c8bd98739.js" integrity="sha256-b2&#43;Q/LjrHEnsOJg45rgB0N4ZQwuOUWkC&#43;NdcPIvZhzk=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://paddecraft.github.com/docs/upstream/index.xml" title="PaddeCraft" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>PaddeCraft</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0ae376af466dbc35249d93fdb59f4624" class="toggle" checked />
+    <label for="section-0ae376af466dbc35249d93fdb59f4624" class="flex justify-between">
+      <a href="/docs/upstream/" class="active">UpStream</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/docs/upstream/development/" class="">Development</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://github.com/paddecraft/" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+  <li>
+    <a href="https://themes.gohugo.io/hugo-book/" target="_blank" rel="noopener">
+        Powered by Hugo-Book
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>UpStream</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a>
+      <ul>
+        <li><a href="#disclaimer">Disclaimer</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#development">Development</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="overview">
+  Overview
+  <a class="anchor" href="#overview">#</a>
+</h1>
+<p>Upstream is a command-line utility to explore files via a web browser.<br>
+It should be very simple to use.</p>
+<h2 id="disclaimer">
+  Disclaimer
+  <a class="anchor" href="#disclaimer">#</a>
+</h2>
+<p>This is still work-in-progress. If you experiance a bug or have a feature-request, open an issue.</p>
+<h2 id="installation">
+  Installation
+  <a class="anchor" href="#installation">#</a>
+</h2>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-uniqueid" id="tabs-uniqueid-0" checked="checked" />
+  <label for="tabs-uniqueid-0">Linux/MacOS</label>
+  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Latest release</span>
+</span></span><span style="display:flex;"><span>python3 -m pip install https://api.github.com/repos/PaddeCraft/UpStream/zipball
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Developement version</span>
+</span></span><span style="display:flex;"><span>python3 -m pip install git+https://github.com/PaddeCraft/UpStream.git
+</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-uniqueid" id="tabs-uniqueid-1"  />
+  <label for="tabs-uniqueid-1">Windows</label>
+  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># Latest release</span>
+</span></span><span style="display:flex;"><span>python -m pip install https://api.github.com/repos/PaddeCraft/UpStream/zipball
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Developement version</span>
+</span></span><span style="display:flex;"><span>python -m pip install git+https://github.com/PaddeCraft/UpStream.git
+</span></span></code></pre></div></div></div>
+
+<h2 id="usage">
+  Usage
+  <a class="anchor" href="#usage">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>python3 -m upstream --port INT          <span style="color:#f92672">=</span> <span style="color:#ae81ff">55555</span>
+</span></span><span style="display:flex;"><span>                    --directory PATH    <span style="color:#f92672">=</span> .
+</span></span><span style="display:flex;"><span>                    --host              <span style="color:#f92672">=</span> 0.0.0.0
+</span></span><span style="display:flex;"><span>                    --foldersizedisplay <span style="color:#f92672">=</span> false     <span style="color:#75715e"># Don´t use for big directories,</span>
+</span></span><span style="display:flex;"><span>                                                    <span style="color:#75715e"># because it needs to read the size</span>
+</span></span><span style="display:flex;"><span>                                                    <span style="color:#75715e"># of every single file.</span>
+</span></span></code></pre></div><h2 id="development">
+  Development
+  <a class="anchor" href="#development">#</a>
+</h2>
+
+
+
+
+  
+
+<a  href="/docs/upstream/development/"   class="book-btn">
+  Development Docs
+</a>
+
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+  <div>
+    <a class="flex align-center" href="https://github.com/paddecraft/paddecraft.github.io/edit/main/docs/content/docs/UpStream/_index.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>Edit this page</span>
+    </a>
+  </div>
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a>
+      <ul>
+        <li><a href="#disclaimer">Disclaimer</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#development">Development</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

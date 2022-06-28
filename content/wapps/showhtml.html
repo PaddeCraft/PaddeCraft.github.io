@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <input
+            type="file"
+            id="input"
+            accept="text/html"
+            onchange="update(this)"
+        />
+        <script>
+            const params = new Proxy(
+                new URLSearchParams(window.location.search),
+                {
+                    get: (searchParams, prop) => searchParams.get(prop),
+                }
+            );
+            const data = params._data;
+            const btn = document.getElementById("btn");
+
+            if (data) {
+                document.documentElement.innerHTML = "Loading...";
+                const html = atob(data);
+                document.documentElement.innerHTML = html;
+            }
+            function update(ele) {
+                const input = ele.files[0];
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    const content = btoa(
+                        unescape(encodeURIComponent(e.target.result))
+                    );
+                    var url = new URL(document.location.href);
+                    url.searchParams.set("_data", content);
+                    document.location.href = url.href;
+                };
+                reader.readAsText(ele.files[0]);
+            }
+        </script>
+    </body>
+</html>
