@@ -87,7 +87,7 @@ def generateTreeUI(elem, withEnding=True):
         html += "</ul>"
         return html
     else:
-        return "<li><a href='/docs" + elem["path"] + (".html" if withEnding else "") + "'><span>" + elem["name"] + "</span></a></li>"
+        return "<li><a href='/<script>document.write(window.location.pathname.split(\"/\")[1]</script>/docs" + elem["path"] + (".html" if withEnding else "") + "'><span>" + elem["name"] + "</span></a></li>"
 
 
 def convert(elem):
