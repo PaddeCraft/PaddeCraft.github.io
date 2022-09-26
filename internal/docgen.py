@@ -18,6 +18,7 @@ SRCDIR = "./docsrc"
 OUTDIR = "./docs"
 
 template = """<!doctypehtml><html lang=en><meta charset=UTF-8><meta content="IE=edge"http-equiv=X-UA-Compatible><meta content="width=device-width,initial-scale=1"name=viewport><title>Docs</title><link href="https://fonts.googleapis.com/css?family=Nunito"rel=stylesheet><link href=/assets/docs-codehilie.css rel=stylesheet><link href=/assets/docs.css rel=stylesheet><script>function resizeSidebar(){window.matchMedia("(min-width: 800px)").matches?(document.getElementById("tree").style.height=document.getElementById("main").offsetHeight+"px",document.getElementById("tree").style.borderBottom="none"):(document.getElementById("tree").style.height="100%",document.getElementById("tree").style.borderBottom="1px solid")}document.addEventListener("DOMContentLoaded",function(){resizeSidebar(),window.addEventListener("resize",resizeSidebar),document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(function(e){"tableofcontents"!=e.id&&(e.classList.add("headerlink"),id=e.innerText,e.id="headerlink-"+id.replaceAll(" ","-").toLowerCase(),e.addEventListener("click",function(e){url=new URL(window.location.href),url.searchParams.set("jumpto",e.target.id),navigator.clipboard.writeText(url.toString()),window.location.href=url.toString()}))}),setTimeout(function(){url=new URL(window.location.href),jumpto=url.searchParams.get("jumpto"),null!=jumpto&&document.getElementById(jumpto).scrollIntoView(!0)},200)})</script><div id=wrapper><div id=tree><h2 id=tableofcontents>Table of contents</h2>##LIST##</div><div id=main>##CONTENT##</div></div>"""
+docRepoName = ""
 
 if not os.path.isdir(SRCDIR):
     print("ERROR: The source folder does not exist.")
@@ -87,7 +88,7 @@ def generateTreeUI(elem, withEnding=True):
         html += "</ul>"
         return html
     else:
-        return "<li><a href='/<script>document.write(window.location.pathname.split(\"/\")[1]</script>/docs" + elem["path"] + (".html" if withEnding else "") + "'><span>" + elem["name"] + "</span></a></li>"
+        return "<li><a href='/" + docRepoName + "/docs" + elem["path"] + (".html" if withEnding else "") + "'><span>" + elem["name"] + "</span></a></li>"
 
 
 def convert(elem):
@@ -128,7 +129,7 @@ def build():
     print("Done.")
 
 
-def main(daemon: bool = False):
+def main(daemon: bool = False, reponame: str = ""):
     def buildProcess():
         print("\nRendered documentation in " +
               str(round(timeit(build, number=1) * 1000, 4)) + "ms.")
@@ -137,6 +138,9 @@ def main(daemon: bool = False):
         print(
             f"\n\nChange detected, regenerating docs...\n")
         buildProcess()
+    # Set variable
+    global docRepoName
+    docRepoName = reponame
     # Run once with or without daemon, to initialize
     buildProcess()
     # Start daemon if wanted
