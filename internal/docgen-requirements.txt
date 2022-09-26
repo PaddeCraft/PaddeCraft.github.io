@@ -1,0 +1,5 @@
+css-html-js-minify
+watchdog
+markdown
+pygments
+typer

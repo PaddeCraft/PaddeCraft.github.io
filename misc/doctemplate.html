@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Docs</title>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Nunito"
+        />
+        <link rel="stylesheet" href="/assets/docs-codehilie.css" />
+        <link rel="stylesheet" href="/assets/docs.css" />
+        <script>
+            function resizeSidebar() {
+                if (window.matchMedia("(min-width: 800px)").matches) {
+                    document.getElementById("tree").style.height =
+                        document.getElementById("main").offsetHeight + "px";
+                    document.getElementById("tree").style.borderBottom = "none";
+                } else {
+                    document.getElementById("tree").style.height = "100%";
+                    document.getElementById("tree").style.borderBottom =
+                        "1px solid";
+                }
+            }
+            document.addEventListener("DOMContentLoaded", function () {
+                // Sidebar handling
+                resizeSidebar();
+                window.addEventListener("resize", resizeSidebar);
+
+                // Direct header link
+                document
+                    .querySelectorAll("h1, h2, h3, h4, h5, h6")
+                    .forEach(function (e) {
+                        if (!(e.id == "tableofcontents")) {
+                            e.classList.add("headerlink");
+                            id = e.innerText;
+                            e.id =
+                                "headerlink-" +
+                                id.replaceAll(" ", "-").toLowerCase();
+                            e.addEventListener("click", function (e) {
+                                url = new URL(window.location.href);
+                                url.searchParams.set("jumpto", e.target.id);
+                                navigator.clipboard.writeText(url.toString());
+                                window.location.href = url.toString();
+                            });
+                        }
+                    });
+                setTimeout(function () {
+                    url = new URL(window.location.href);
+                    jumpto = url.searchParams.get("jumpto");
+                    if (!(jumpto == null)) {
+                        document.getElementById(jumpto).scrollIntoView(true);
+                    }
+                }, 200);
+            });
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="tree">
+                <h2 id="tableofcontents">Table of contents</h2>
+                ##LIST##
+            </div>
+            <div id="main">##CONTENT##</div>
+        </div>
+    </body>
+</html>

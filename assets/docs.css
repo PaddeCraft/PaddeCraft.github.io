@@ -1,0 +1,75 @@
+@import url("https://cdn.jsdelivr.net/gh/arcticicestudio/nord@develop/src/nord.css");
+
+body {
+    font-family: "Nunito";
+    background-color: var(--nord0);
+    color: var(--nord8);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Window layout                               */
+/* -------------------------------------------------------------------------- */
+/* https: //stackoverflow.com/a/5803055 */
+#wrapper {
+    height: 100%;
+}
+#tree {
+    max-width: 24em;
+    float: left;
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+}
+
+
+@media only screen and (max-width: 800px) {
+    #tree {
+        float: none;
+        border-right: none;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                          Table of contents styling                         */
+/* -------------------------------------------------------------------------- */
+
+ul {
+    list-style-type: none;
+}
+
+li > a {
+    color: var(--nord4);
+    text-decoration: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 Other stuff                                */
+/* -------------------------------------------------------------------------- */
+
+a {
+    color: var(--nord10);
+    text-decoration: dotted underline;
+    transition: 0.1s ease-in-out;
+
+}
+
+a:hover {
+    color: var(--nord9);
+}
+
+.headerlink {
+    cursor: pointer;
+}
+
+
+
+.headerlink:hover::after {
+    background-color: var(--nord2);
+    color: var(--nord7);
+    margin-left: 0.3em;
+    padding: 0.1em;
+    border-radius: 0.2em;
+    content: "Click to copy!";
+    font-size: 20px
+}

@@ -1,0 +1,94 @@
+body,
+html,
+#container {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    /* Background */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://unsplash.com/photos/9wH624ALFQA/download?force=true");
+
+    /* Font */
+    color: white;
+    font-family: "Rubik";
+    text-shadow: 1.3px 1.3px rgba(39, 39, 39, 0.2);
+
+}
+
+#main {
+    width: 18em;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: .5em;
+    backdrop-filter: blur(3px);
+    text-align: center;
+    padding-inline: 0.5em;
+
+    /* https: //stackoverflow.com/a/23703655 */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#main > h1 {
+    margin-bottom: 0px;
+}
+
+#main > h4 {
+    margin-top: 4px;
+}
+
+#about {
+    text-align: left;
+}
+
+#about > span {
+    margin-bottom: 0px;
+}
+
+#about > ul {
+    margin-top: 2px;
+}
+
+a {
+    text-decoration: dotted underline;
+    color: rgb(156, 229, 241);
+}
+
+#socials > svg {
+    width: 1.3em;
+    height: 1.3em;
+    transition: 0.15s ease-in-out;
+    margin-right: 0.3em;
+    cursor: pointer;
+}
+
+#socials > svg:hover {
+    scale: 110%;
+}
+
+#socials :last-child {
+    margin-right: 0em;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0.1em;
+    background-color: black;
+    width: 100%;
+    padding: 5px;
+}
+
+/* Larger screen, larger box */
+@media only screen and (min-width: 700px) {
+    #container {
+        scale: 200%;
+    }
+}
