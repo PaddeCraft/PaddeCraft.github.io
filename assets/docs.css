@@ -6,6 +6,11 @@ body {
     color: var(--nord8);
 }
 
+body, html {
+    height: 100%;
+    margin: 0px;
+}
+
 /* -------------------------------------------------------------------------- */
 /*                                Window layout                               */
 /* -------------------------------------------------------------------------- */
@@ -13,20 +18,34 @@ body {
 #wrapper {
     height: 100%;
 }
+
 #tree {
     max-width: 24em;
     float: left;
     margin-right: 15px;
     padding-right: 15px;
     border-right: 1px solid;
-    border-bottom: 1px solid;
+    border-bottom: none;
+
+    height: 100%;
+    padding: 1em;
 }
 
+#tableofcontents {
+    margin-top: 0px;
+}
+
+#main {
+    padding: 1em;
+}
 
 @media only screen and (max-width: 800px) {
     #tree {
         float: none;
         border-right: none;
+        border-bottom: 1px solid;
+
+        height: fit-content;
     }
 }
 

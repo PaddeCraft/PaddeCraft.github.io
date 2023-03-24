@@ -12,22 +12,7 @@
         <link rel="stylesheet" href="/assets/docs-codehilie.css" />
         <link rel="stylesheet" href="/assets/docs.css" />
         <script>
-            function resizeSidebar() {
-                if (window.matchMedia("(min-width: 800px)").matches) {
-                    document.getElementById("tree").style.height =
-                        document.getElementById("main").offsetHeight + "px";
-                    document.getElementById("tree").style.borderBottom = "none";
-                } else {
-                    document.getElementById("tree").style.height = "100%";
-                    document.getElementById("tree").style.borderBottom =
-                        "1px solid";
-                }
-            }
             document.addEventListener("DOMContentLoaded", function () {
-                // Sidebar handling
-                resizeSidebar();
-                window.addEventListener("resize", resizeSidebar);
-
                 // Direct header link
                 document
                     .querySelectorAll("h1, h2, h3, h4, h5, h6")
