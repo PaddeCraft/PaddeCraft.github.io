@@ -2,4 +2,5 @@ css-html-js-minify
 watchdog
 markdown
 pygments
+requests
 typer
