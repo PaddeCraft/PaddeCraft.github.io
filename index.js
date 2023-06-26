@@ -7,12 +7,12 @@ const quotes = [
     "Python is faster then C.",
     "I use arch btw.",
     ":qw",
-    "Legit news: TikTok",
     "My code without StackOverflow:",
     "This is a quote",
     "!false: it's funny bcuz it's true.",
     "An exception occured.",
     "What does this function do again?",
+    "ChatGPT generates very safe C-code",
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
