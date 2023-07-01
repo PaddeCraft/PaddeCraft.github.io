@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+body {
+    font-family: "Roboto", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+    color: rgb(207, 226, 255);
+    background-color: rgb(9, 18, 31);
+}
+
+a, a:visited {
+    all: unset;
+}
+
+.link {
+    background-color: rgb(40, 53, 71);
+
+    padding: 0.6em;
+
+    border-radius: 0.4em;
+    margin-bottom: 0.5em;
+
+    cursor: pointer;
+}
+
+@media (hover: hover) {
+    .link {
+        transition:  0.3s ease-in-out;
+    }
+
+    .link:hover {
+        background-color: rgb(62, 83, 112);
+    }
+}
+
+body {
+    padding: 0.6em;
+
+    max-width: 500px;
+    margin-inline: auto;
+}

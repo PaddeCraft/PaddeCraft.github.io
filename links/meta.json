@@ -1,0 +1,43 @@
+[
+    [
+        "Projects",
+        {
+            "name": "TouchPanel",
+            "href": "https://paddecraft.github.io/TouchPanel"
+        },
+        {
+            "name": "TermOverflow",
+            "href": "https://github.com/PaddeCraft/TermOverflow"
+        },
+        {
+            "name": "UpStream",
+            "href": "https://github.com/PaddeCraft/UpStream"
+        }
+    ],
+    [
+        "Socials",
+        {
+            "name": "GitHub",
+            "href": "https://github.com/PaddeCraft"
+        },
+        {
+            "name": "CodePen",
+            "href": "https://codepen.io/paddecraft/"
+        }
+    ],
+    [
+        "Webpages",
+        {
+            "name": "Clock",
+            "href": "https://paddecraft.github.io/clock"
+        },
+        {
+            "name": "SafariHTMLs",
+            "href": "https://paddecraft.github.io/SafariHtmls"
+        },
+        {
+            "name": "DasLight-SceneShift",
+            "href": "https://paddecraft.github.io/daslight-sceneshift"
+        }
+    ]
+]
