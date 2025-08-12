@@ -1,3 +1,5 @@
+@import url("./assets/fonts/rubik.css");
+
 body,
 html,
 #container {
@@ -10,19 +12,18 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("https://unsplash.com/photos/9wH624ALFQA/download?force=true");
+    background-image: url("./assets/images/dns-dgn-9wH624ALFQA-unsplash.jpg");
 
     /* Font */
     color: white;
     font-family: "Rubik";
     text-shadow: 1.3px 1.3px rgba(39, 39, 39, 0.2);
-
 }
 
 #main {
     width: 18em;
     background-color: rgba(255, 255, 255, 0.2);
-    border-radius: .5em;
+    border-radius: 0.5em;
     backdrop-filter: blur(3px);
     text-align: center;
     padding-inline: 0.5em;
@@ -84,6 +85,15 @@ a {
     background-color: black;
     width: 100%;
     padding: 5px;
+}
+
+#acronym {
+    font-size: 0.6em;
+    color: rgb(198, 247, 255);
+    letter-spacing: 0.1em;
+    font-weight: bold;
+
+    padding-bottom: 1em;
 }
 
 /* Larger screen, larger box */
